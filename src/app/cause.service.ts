@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Cause } from './cause.model';
 import { CAUSES } from './mock-causes';
@@ -9,19 +8,29 @@ export class CauseService {
   causes: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
-    this.causes = database.list('causes');
+    this.causes = database.list('cause')
   }
 
   getCauses(){
     return this.causes;
   }
 
-  addCause(newCause: Cause) {
-    this.causes.push(newCause);
+  addCause(theCause: Cause) {
+    this.causes.push(theCause);
   }
 
-  getCauseById(causeId: string){
-    return this.database.object('causes/' + causeId);
+  getCauseById(theId: string) {
+    return this.database.object('cause/'+theId);
+  }
+
+  updateCause(localUpdatedCause){
+    var causeEntryInFirebase = this.getCauseById(localUpdatedCause.$key);
+    causeEntryInFirebase.update({
+      name: localUpdatedCause.name,
+      description: localUpdatedCause.description,
+      goal: localUpdatedCause.goal,
+      category: localUpdatedCause.category
+    });
   }
 
 }

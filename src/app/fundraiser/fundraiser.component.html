@@ -1,3 +1,4 @@
+<p>FUNDRAISER TEST</p>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Add New Cause to Our Database</h3>
@@ -18,18 +19,17 @@
         <textarea class='form-control' #newDescription></textarea>
         <br>
         <label>Category:</label>
-            <select #newCategory class='dropdown show'>
+        <select #newCategory class='dropdown show'>
           <option value="Travel">Travel</option>
           <option value="Health">Health</option>
           <option value="Arts">Arts</option>
           <option value="Humanities">Humanities</option>
           <option value="Technology">Technology</option>
           <option value="Other">Other</option>
-            </select>
-      <br>
-      <br>
-      <!--ADD PROPERTIES TO SUBMITFORM-->
-       <button (click)="submitForm(newName.value, newDescription.value, newGoal.value, newCategory.value); newName.value=''; newDescription.value=''; newGoal.value=''; " class="form-control btn-success">Add Cause</button>
+        </select>
+        <br>
+        <br>
+        <button (click)="submitForm(newName.value, newDescription.value, newGoal.value, newCategory.value); newName.value=''; newDescription.value=''; newGoal.value=''; " class="form-control btn-success">Add Cause</button>
     </div>
   </div>
 </div>

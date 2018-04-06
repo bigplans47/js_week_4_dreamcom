@@ -1,7 +1,11 @@
 <h2>Causes</h2>
 
-<div *ngFor="let cause of causes | async" (click)="goToDetailPage(cause)" class="panel panel-default">
-  <div class="panel-body">
-    <h3><em>{{cause.name}}</em></h3>
+<div *ngFor="let cause of causes | async" class="panel panel-default">
+  <div class="card">
+    <h3><em>{{cause.name}} Id:{{cause.$key}}</em></h3>
+    <div *ngIf="currentRoute=== '/admin' ">
+      <h3 (click)="goToDetailPage(cause)">{{cause.description}}</h3>
+      <app-edit-cause [selectedCause]="cause"></app-edit-cause>
+    </div>
   </div>
 </div>

@@ -15,21 +15,17 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 
 export class CauseDetailComponent implements OnInit {
   causeId: string;
-  causeToDisplay;
-
 
   constructor(private route: ActivatedRoute, private location: Location, private causeService: CauseService) { }
+  causeToDisplay;
 
-  //private route: ActivatedRoute allows us to go to specific page based off of data in Firebase
-
-
-  ngOnInit() {
-    this.route.params.forEach((urlParameters) => {
-     this.causeId = urlParameters['id'];
-     //the above two lines set up route paramaters and generate urls based off of Firebase hash ids
-   });
-   this.causeToDisplay = this.causeService.getCauseById(this.causeId);
-   //calls causeToDisplay and getCauseById(this.causeId) to tell causeService to route us to specific causes
+  ngOnInit(){
+    this.route.params.forEach((urlParameters)=>{
+      this.causeId = urlParameters['id'];
+    })
+    this.causeToDisplay = this.causeService.getCauseById(this.causeId)
   }
+     //the above two lines set up route paramaters and generate urls based off of Firebase hash ids
+   //calls causeToDisplay and getCauseById(this.causeId) to tell causeService to route us to specific causes
 
 }

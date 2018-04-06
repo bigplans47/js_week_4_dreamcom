@@ -21,4 +21,4 @@ export class FundraiserComponent implements OnInit {
   ngOnInit() {
   }
 
-  }
+}

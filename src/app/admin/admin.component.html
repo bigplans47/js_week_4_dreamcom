@@ -1,0 +1,23 @@
+<div class="card">
+  <h5 class="card-title btn-success">Add a cause below</h5>
+  <div>
+    <label>Cause Name</label>
+    <input #newCause>
+  </div>
+  <div>
+    <label>Description</label>
+    <input #newDescription>
+  </div>
+  <div>
+    <label>Fundraising Goal in Dollars</label>
+    <input #newGoal>
+  </div>
+  <div>
+    <label>Category</label>
+    <input #newCategory>
+  </div>
+  <button class="btn btn-success" (click)="submitForm(newCause.value, newDescription.value, newGoal.value, newCategory.value); newCause.value=''; newDescription.value=''; newGoal.value=''; newCategory.value='' ">Add</button>
+</div>
+<div>
+  <app-marketplace></app-marketplace>
+</div>

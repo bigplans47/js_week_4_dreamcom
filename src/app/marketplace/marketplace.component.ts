@@ -13,6 +13,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 
 export class MarketplaceComponent implements OnInit {
   causes: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url; //used to see url route
 
   constructor(private router: Router, private causeService: CauseService){}
 
@@ -22,5 +23,5 @@ export class MarketplaceComponent implements OnInit {
 
   goToDetailPage(clickedCause) {
     this.router.navigate(['causes', clickedCause.$key]);
-  };
+  }
 }

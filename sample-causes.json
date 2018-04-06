@@ -1,0 +1,10 @@
+{ "cause": [{
+    "name": "Tumor removal", "description": "Help me get rid of the clump please", "goal": 1000, "category": "Health"
+  },
+  {
+    "name": "Tumor removal2", "description": "Help me get rid of the clump please", "goal": 1000, "category": "Health"
+  },
+  {
+    "name": "Travel around the globe", "description": "Help me do a dream vacation including Italy, France, Germany, England and Spain", "goal": 10000, "category": "Travel"
+  }]
+}
